@@ -13,10 +13,33 @@
   .titulo { flex:1; font-size:14px; }
   input[type=number] { width:60px; background:#1b1730; border:1px solid #4a3f80; color:#f2b705; border-radius:6px; padding:6px; font-size:14px; }
   input[type=checkbox] { width:22px; height:22px; }
+<style>
+  * { box-sizing:border-box; }
+  body { background:#1b1730; color:#e9e5f2; font-family:-apple-system,sans-serif; padding:20px 16px 60px; margin:0; }
+  h1 { font-size:34px; letter-spacing:1px; color:#f2b705; text-shadow:3px 3px 0 #e63946; margin:0 0 4px; }
+  .sub { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#8b84a8; margin-bottom:18px; }
+  .barra { background:#0f0c1e; height:12px; border-radius:6px; overflow:hidden; border:1px solid #2e2850; }
+  .relleno { background:linear-gradient(90deg,#f2b705,#e63946); height:100%; transition:width .4s; }
+  #cuenta { font-size:12px; color:#f2b705; text-align:right; margin:6px 0 20px; font-variant-numeric:tabular-nums; }
+  .fase { color:#f72585; margin:26px 0 12px; font-size:20px; font-weight:700; letter-spacing:1px; }
+
+  .peli { background:#241f3d; border:1.5px solid #322a58; border-radius:12px; padding:14px; margin-bottom:10px; display:flex; align-items:center; gap:14px; transition:all .15s; }
+  .peli.vista { border-color:#3f7a5c; background:#1f2b28; }
+  .titulo { flex:1; font-size:14.5px; font-weight:500; }
+  .peli.vista .titulo { opacity:.5; text-decoration:line-through; }
+
+  input[type=number] { width:56px; background:#1b1730; border:1.5px solid #4a3f80; color:#f2b705; border-radius:8px; padding:8px 6px; font-size:15px; font-weight:700; text-align:center; outline:none; }
+  input[type=number]:focus { border-color:#f2b705; }
+  .peli.vista input[type=number] { border-color:#3f7a5c; color:#7ddba4; }
+
+  input[type=checkbox] { appearance:none; width:26px; height:26px; border:2px solid #4a3f80; border-radius:8px; background:#1b1730; flex-shrink:0; position:relative; cursor:pointer; }
+  input[type=checkbox]:checked { background:#3f7a5c; border-color:#52b788; }
+  input[type=checkbox]:checked::after { content:'✓'; position:absolute; top:-2px; left:5px; color:#fff; font-size:18px; font-weight:700; }
 </style>
 </head>
 <body>
   <h1>MCU Maratón</h1>
+  <div class="sub">Tu orden de batalla</div>
   <div class="barra"><div class="relleno" id="relleno"></div></div>
   <div id="cuenta"></div>
   <div id="lista"></div>
