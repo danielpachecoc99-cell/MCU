@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1 id="salida">0</h1>
-  <button onclick="sumar()">Sumar 1</button>
+  <h1>MCU</h1>
+  <div id="lista"></div>
 
   <script>
-    let n = Number(localStorage.getItem("prueba") || 0);
-    document.getElementById("salida").textContent = n;
+    const peliculas = [
+      { id: "gotg1", titulo: "Guardianes de la Galaxia" },
+      { id: "ultron", titulo: "Era de Ultrón" },
+      { id: "civilwar", titulo: "Civil War" }
+    ];
 
-    function sumar() {
-      n = n + 1;
-      localStorage.setItem("prueba", n);
-      document.getElementById("salida").textContent = n;
+    function pintar() {
+      let html = "";
+      for (const p of peliculas) {
+        html = html + "<p>" + p.titulo + "</p>";
+      }
+      document.getElementById("lista").innerHTML = html;
     }
+
+    pintar();
   </script>
 </body>
 </html>
+
+
+
+  
+
+
+
+
 
