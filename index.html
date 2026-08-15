@@ -1,2 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="salida">0</h1>
+  <button onclick="sumar()">Sumar 1</button>
 
-
+  <script>
+    let n = Number(localStorage.getItem("prueba") || 0);
+    document.getElementById("salida").textContent = n;
+
+    function sumar() {
+      n = n + 1;
+      localStorage.setItem("prueba", n);
+      document.getElementById("salida").textContent = n;
+    }
+  </script>
+</body>
+</html>
+
