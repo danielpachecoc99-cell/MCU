@@ -11,10 +11,20 @@
       { id: "civilwar", titulo: "Civil War" }
     ];
 
+    let puestos = JSON.parse(localStorage.getItem("puestos") || "{}");
+
+    function guardar(id, valor) {
+      puestos[id] = valor;
+      localStorage.setItem("puestos", JSON.stringify(puestos));
+    }
+
     function pintar() {
       let html = "";
       for (const p of peliculas) {
-        html = html + "<p>" + p.titulo + "</p>";
+        const valor = puestos[p.id] || "";
+        html = html + "<p>" + p.titulo +
+          " <input type='number' value='" + valor +
+          "' onchange='guardar(\"" + p.id + "\", this.value)'></p>";
       }
       document.getElementById("lista").innerHTML = html;
     }
@@ -23,12 +33,4 @@
   </script>
 </body>
 </html>
-
-
-
-  
-
-
-
-
 
